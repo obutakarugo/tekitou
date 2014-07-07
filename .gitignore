@@ -1,0 +1,26 @@
+float X, Y;
+void setup(){
+   size(200,200);
+   colorMode(HSB,100);
+   background(99);
+   frameRate(80);
+   X = 100;
+   Y = 200;
+}
+void draw(){
+   fade();
+   X = X + 1;
+   Y = Y + 1;
+   fill(0);
+   X++; if (width < X) X = 0;
+   Y++; if (height < Y) Y = 0;
+   rectMode(CENTER);
+   rect(X, Y, 40, 40);
+}
+
+void fade(){
+   fill(99,30);
+   rectMode(CORNER);
+   rect(0, 0, 200, 200);
+}
+
